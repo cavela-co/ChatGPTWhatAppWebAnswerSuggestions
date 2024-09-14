@@ -22,6 +22,7 @@ chrome.runtime.onMessage.addListener(function (request, sender) {
             }
           );
         } else {
+          console.log("createGPTUtteranceRealApi");
           createGPTUtteranceRealApi(
             request.prompt,
             async function (gptResponse) {
@@ -93,6 +94,7 @@ async function createGPTUtteranceRealApi(prompt, handleResponseOrError) {
     await chatResponseBodyReader?.cancel();
     chatResponseBodyReader?.releaseLock();
     chatResponseBodyReader = null;
+    const values = await getValues(["apiKey"]);
     const { apiKey } = await getValues(["apiKey"]);
     if (apiKey && apiKey.length > 0) {
       console.log("asking chatgpt: ", prompt);

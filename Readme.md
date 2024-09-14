@@ -24,6 +24,16 @@ https://chrome.google.com/webstore/detail/chatgpt-answers-for-whats/bmbidjjfpkml
 4. Click on "Load unpacked" and select the folder containing the downloaded repository files.
 5. The extension will now appear in your Chrome extensions list, and you can start using it with WhatsApp Web.
 
+## api keys:
+
+This is dumb, but for now, open the background script by going to the extension page, inspect views > background page and in the console set:
+
+```javascript
+chrome.storage.local.set({ apiKey: "" }, () => {
+  console.log("Stored");
+});
+```
+
 ## Usage
 
 1. Open any chat or group chat.

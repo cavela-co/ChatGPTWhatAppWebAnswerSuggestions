@@ -11,7 +11,7 @@
   },
   "host_permissions": ["https://*.openai.com/"],
   "background": {
-    "scripts": ["hot-reload.js", "background.js"]
+    "scripts": ["hot-reload.js", "background.js", "createGptUtterance.js"]
   },
   "action": {
     "default_title": "GPT answers for WhatsApp™ web"
