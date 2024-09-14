@@ -1,5 +1,5 @@
 {
-  "manifest_version": 3,
+  "manifest_version": 2,
   "name": "ChatGPT answers for WhatsApp™ web",
   "version": "0.0.5",
   "description": "ChatGPT answer-suggestions for WhatsApp™ web",
@@ -9,31 +9,20 @@
     "48": "icons/icon_48.png",
     "128": "icons/icon_128.png"
   },
-  "host_permissions": [
-    "https://*.openai.com/"
-  ],
+  "host_permissions": ["https://*.openai.com/"],
   "background": {
-    "service_worker": "background.js"
+    "scripts": ["hot-reload.js", "background.js"]
   },
   "action": {
     "default_title": "GPT answers for WhatsApp™ web"
   },
   "options_page": "options/options.html",
-  "permissions": [
-    "storage"
-  ],
+  "permissions": ["storage"],
   "content_scripts": [
     {
-      "matches": [
-        "https://web.whatsapp.com/*"
-      ],
+      "matches": ["https://web.whatsapp.com/*"],
       "run_at": "document_idle",
-      "js": [
-        "parser.js",
-        "uiStuff.js",
-        "confirmDialog.js",
-        "contentScript.js"
-      ]
+      "js": ["parser.js", "uiStuff.js", "confirmDialog.js", "contentScript.js"]
     }
   ]
 }
