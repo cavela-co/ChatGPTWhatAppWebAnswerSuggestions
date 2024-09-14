@@ -95,6 +95,7 @@ async function createGPTUtteranceRealApi(prompt, handleResponseOrError) {
     chatResponseBodyReader = null;
     const { apiKey } = await getValues(["apiKey"]);
     if (apiKey && apiKey.length > 0) {
+      console.log("asking chatgpt: ", prompt);
       await postConversationReal(apiKey, prompt, handleResponseOrError);
     } else {
       handleResponseOrError({

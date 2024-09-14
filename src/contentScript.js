@@ -22,7 +22,7 @@ link.rel = "stylesheet";
 
 link.type = "text/css";
 link.href = chrome.runtime.getURL("content.css");
-document.head.appendChild(link);
+// document.head.appendChild(link);
 
 // let apiKey;
 let sendHistory = false;
